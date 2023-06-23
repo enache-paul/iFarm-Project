@@ -1,0 +1,84 @@
+@import "general.scss";
+
+$HEIGHT_IN_MARKET: 55rem;
+
+@mixin market_container{
+  background-color: $GRAY_DIV_COLOR;
+  margin-top: $ONE_REM;
+  margin-right: $ONE_REM;
+  padding: 1.5rem;
+  height: $HEIGHT_IN_MARKET;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+
+aside{
+  width: 55%;
+  @include market_container;
+}
+
+h2{
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+h3{
+  font-size: $TWO_REM;
+  margin-bottom: $ONE_REM;
+}
+
+input{
+  margin-bottom: $TWO_REM;
+  &[type=submit]{
+    background-color: $BLACK;
+    color: $WHITE;
+    padding: 0.75rem;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    font-size: 1.25rem;
+    width: $ONE_HUNDRED_PERCENT;
+  }
+  &[type=text]{
+    padding: 0.5rem;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    width: 97.5%;
+    margin-top: $ONE_REM;
+  }
+  &[type=number]{
+    width: 50%;
+  }
+}
+
+label{
+  font-size: 1.25rem;
+}
+
+main{
+  display: $FLEX;
+}
+
+p{
+  font-size: 1.25rem;
+  margin-bottom: $ONE_REM;
+}
+
+#map {
+  height: 48rem;
+  width: $ONE_HUNDRED_PERCENT;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+
+#marketplace{
+  width: 45%;
+  @include market_container;
+}
+
+#NYI{
+  font-size: 3rem;
+  color: red;
+}
+
+.marketBuySell{
+  background-color: $WHITE;
+  padding: $ONE_REM;
+  margin-bottom: $TWO_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  height: 33%;
+}

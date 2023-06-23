@@ -1,0 +1,223 @@
+@keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+aside {
+  animation: slideInFromSide 1.5s;
+}
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+em {
+  visibility: hidden;
+}
+
+main {
+  padding-left: 10.75rem;
+  padding-right: 1rem;
+}
+main > div {
+  animation: slideInFromBottom 0.5s;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  background-color: #6bc247;
+  position: fixed;
+  height: 100%;
+  width: 8%;
+  border-radius: 50px 0 0 50px;
+}
+nav a:hover {
+  animation: pulse 1s infinite;
+}
+
+#account {
+  background-image: url("../images/account.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#account:hover {
+  background-image: url("../images/account-hover.png");
+}
+
+#garden {
+  background-image: url("../images/garden.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#garden:hover {
+  background-image: url("../images/garden-hover.png");
+}
+
+#community {
+  background-image: url("../images/community.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#community:hover {
+  background-image: url("../images/community-hover.png");
+}
+
+#market {
+  background-image: url("../images/marketplace.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#market:hover {
+  background-image: url("../images/marketplace-hover.png");
+}
+
+#robots {
+  background-image: url("../images/robot.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#robots:hover {
+  background-image: url("../images/robot-hover.png");
+}
+
+#recipes {
+  background-image: url("../images/recipe.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#recipes:hover {
+  background-image: url("../images/recipe-hover.png");
+}
+
+aside {
+  width: 55%;
+  background-color: #EAEAEA;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding: 1.5rem;
+  height: 55rem;
+  border-radius: 40px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  margin-bottom: 2rem;
+}
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 40px;
+  font-size: 1.25rem;
+  width: 100%;
+}
+input[type=text] {
+  padding: 0.5rem;
+  border-radius: 40px;
+  width: 97.5%;
+  margin-top: 1rem;
+}
+input[type=number] {
+  width: 50%;
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+main {
+  display: flex;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+#map {
+  height: 48rem;
+  width: 100%;
+  border-radius: 40px;
+}
+
+#marketplace {
+  width: 45%;
+  background-color: #EAEAEA;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding: 1.5rem;
+  height: 55rem;
+  border-radius: 40px;
+}
+
+#NYI {
+  font-size: 3rem;
+  color: red;
+}
+
+.marketBuySell {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 40px;
+  height: 33%;
+}
+
+/*# sourceMappingURL=market.css.map */

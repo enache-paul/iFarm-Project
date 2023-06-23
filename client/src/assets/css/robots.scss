@@ -1,0 +1,308 @@
+@import "general.scss";
+@import "garden.scss";
+
+$WORKLOAD_ICON: url("../images/workload.png");
+
+@mixin robots_icons {
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  background-position: center right 3rem;
+  background-size: $BACKGROUND_SIZE;
+}
+
+aside{
+  padding: 2rem;
+  width: 38%;
+  background-color: #EAEAEA;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  h3{
+    margin-bottom: $TWO_REM;
+    font-size: 1.25rem;
+  }
+}
+
+div{
+  h4{
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: $ONE_REM;
+    margin-bottom: $ONE_REM;
+    text-transform: capitalize;
+  }
+  #warnings{
+    background-color: $WHITE;
+    padding: $ONE_REM;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    h5{
+      font-size: 1.5rem;
+      margin-bottom: $ONE_REM;
+    }
+    li{
+      font-size: 1.25rem;
+      text-transform: capitalize;
+      margin-bottom: $ONE_REM;
+      background-color: lightgray;
+      border-radius: $GENERAL_BORDER_RADIUS;
+      padding: $ONE_REM;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  #robot-setup{
+    background-color: $WHITE;
+    padding: $ONE_REM;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    h5{
+      font-size: 1.5rem;
+      margin-bottom: $ONE_REM;
+    }
+    li{
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+h1{
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+main{
+  display: $FLEX;
+  justify-content: space-between;
+  padding-top: $ONE_REM;
+  padding-bottom: $ONE_REM;
+  padding-left: 12rem;
+  &>div{
+    padding: $TWO_REM;
+    width: 54%;
+    height: $ONE_HUNDRED_PERCENT;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    background-color: $GRAY_DIV_COLOR;
+  }
+  div{
+    h3{
+      font-size: 2.5rem;
+      margin-top: -0.75rem;
+    }
+    #robots-stats{
+      ul{
+        display: $FLEX;
+        justify-content: space-between;
+        margin-top: $TWO_REM;
+        margin-bottom: $TWO_REM;
+        li{
+          padding: 3.5rem 3rem;
+          width: 39%;
+          border-radius: $GENERAL_BORDER_RADIUS;
+          background-color: white;
+        }
+      }
+    }
+    div{
+      li{
+        span{
+          font-weight: bold;
+          font-size: $TWO_REM;
+        }
+      }
+    }
+  }
+}
+
+p{
+  font-size: 1.2rem;
+}
+
+span{
+  color: $GENERAL_GREEN;
+}
+
+#add-robot {
+  img {
+    border-radius: 20px;
+    max-width: $ONE_HUNDRED_PERCENT;
+  }
+  p{
+    margin-bottom: $ONE_REM;
+  }
+}
+
+#create-robot{
+  label{
+    font-size: 1.5rem;
+  }
+  input[type=text]{
+    padding: 1.2rem;
+    border-radius: 15px;
+    margin: $ONE_REM 0 $ONE_REM 0;
+  }
+  input[type=submit]{
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #6bc247;
+    color: white;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-top: 0.5rem;
+    border-radius: 40px;
+  }
+}
+
+#chart {
+  width: $ONE_HUNDRED_PERCENT;
+  height: $ONE_HUNDRED_PERCENT;
+}
+
+#chart-placeholder{
+  background-color: $WHITE;
+  padding: $ONE_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  div{
+    img{
+      width: 60%;
+      margin-left: 7rem;
+      border-radius: $GENERAL_BORDER_RADIUS;
+    }
+  }
+  ul{
+    background-color: $GRAY_DIV_COLOR;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    padding: 1.25rem;
+    li{
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      span{
+        font-size: $TWO_REM;
+      }
+    }
+  }
+}
+#qr{
+  background-color: $WHITE;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  text-align: center;
+  box-sizing: border-box;
+  padding: $ONE_REM;
+  img{
+    width: 40%;
+  }
+}
+
+#robot{
+  background-image: $ROBOTS_ICON;
+  @include robots_icons;
+}
+
+#robots-in-garden {
+  li {
+    padding: $TWO_REM 0 0 $TWO_REM;
+    margin-bottom: 1.2rem;
+    width: 4rem;
+    cursor: pointer;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+#robot-setup{
+  button{
+    @include button_style;
+  }
+  height: 27rem;
+  ul{
+    margin-bottom: 2rem;
+  }
+}
+
+
+#scan{
+  display: $FLEX;
+  justify-content: space-between;
+  margin-top: $ONE_REM;
+  align-items: flex-end;
+  ul{
+    li{
+      padding-top: 2rem;
+      padding-left: 1rem;
+      height: 5rem;
+      width: 9rem;
+      background-color: lightgray;
+      border-radius: $GENERAL_BORDER_RADIUS;
+      font-weight: bold;
+      text-transform: capitalize;
+      transition-duration: 300ms;
+      &:hover{
+        background-color: darkgrey;
+        height: 5rem;
+        width: 9rem;
+      }
+      a{
+        text-decoration: none;
+        color: $BLACK;
+      }
+    }
+  }
+}
+
+#scan-of-garden {
+  img {
+    width: 97%;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    height: 96.5%;
+  }
+}
+
+#select-zone {
+  h3 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: $ONE_REM;
+    margin-bottom: $ONE_REM;
+    text-transform: capitalize;
+  }
+}
+
+#temperature{
+  background-image: $TEMPERATURE_ICON;
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  background-position: center right 1.5rem;
+  background-size: $TWO_REM;
+}
+
+#vegetables-in-garden{
+  li{
+    margin-bottom: 2.5rem;
+    width: 5rem;
+    cursor: pointer;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+#workload{
+  background-image: $WORKLOAD_ICON;
+  @include robots_icons;
+}
+
+.hidden{
+  display: none;
+}
+
+.selected{
+  @include selected_style;
+}

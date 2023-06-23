@@ -1,0 +1,182 @@
+aside {
+  -webkit-animation: slideInFromSide 1.5s;
+          animation: slideInFromSide 1.5s;
+}
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+button {
+  display: block;
+  font-size: 1.25rem;
+  font-family: Helvetica, sans-serif;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 30px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+em {
+  visibility: hidden;
+}
+
+main {
+  padding-left: 10.75rem;
+  padding-right: 1rem;
+}
+main > div {
+  -webkit-animation: slideInFromBottom 0.5s;
+          animation: slideInFromBottom 0.5s;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  background-color: #6bc247;
+  position: fixed;
+  height: 100%;
+  width: 8%;
+  border-radius: 50px 0 0 50px;
+}
+nav a:hover {
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#account {
+  background-image: url("../images/account.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#account:hover {
+  background-image: url("../images/account-hover.png");
+}
+
+#garden {
+  background-image: url("../images/garden.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#garden:hover {
+  background-image: url("../images/garden-hover.png");
+}
+
+#community {
+  background-image: url("../images/community.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#community:hover {
+  background-image: url("../images/community-hover.png");
+}
+
+#market {
+  background-image: url("../images/marketplace.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#market:hover {
+  background-image: url("../images/marketplace-hover.png");
+}
+
+#robots {
+  background-image: url("../images/robot.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#robots:hover {
+  background-image: url("../images/robot-hover.png");
+}
+
+#recipes {
+  background-image: url("../images/recipe.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#recipes:hover {
+  background-image: url("../images/recipe-hover.png");
+}/*# sourceMappingURL=general.css.map */

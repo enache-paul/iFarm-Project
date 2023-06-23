@@ -1,0 +1,180 @@
+// GLOBAL CSS (Over whole document)
+$GENERAL_BORDER_RADIUS: 40px;
+$GRAY_DIV_COLOR: #EAEAEA;
+$WHITE: white;
+$GENERAL_GREEN: #6bc247;
+$ONE_HUNDRED_PERCENT: 100%;
+$CENTER: center;
+$BACKGROUND_NO_REPEAT: no-repeat;
+$FLEX: flex;
+$BLACK: black;
+$TWO_REM: 2rem;
+$ONE_REM: 1rem;
+$HELVETICA: Helvetica, sans-serif;
+
+//ICONS
+$ACCOUNT_ICON: url("../images/account.png");
+$ACCOUNT_HOVER_ICON: url("../images/account-hover.png");
+$GARDEN_ICON: url("../images/garden.png");
+$GARDEN_HOVER_ICON: url("../images/garden-hover.png");
+$COMMUNITY_ICON: url("../images/community.png");
+$COMMUNITY_HOVER_ICON: url("../images/community-hover.png");
+$MARKETPLACE_ICON: url("../images/marketplace.png");
+$MARKETPLACE_HOVER_ICON: url("../images/marketplace-hover.png");
+$ROBOTS_ICON: url("../images/robot.png");
+$ROBOTS_HOVER_ICON: url("../images/robot-hover.png");
+$RECIPES_ICON: url("../images/recipe.png");
+$RECIPES_HOVER_ICON: url("../images/recipe-hover.png");
+$BACKGROUND_SIZE: 3rem;
+$HEIGHT: 3rem;
+
+
+@keyframes slideInFromSide{
+  0%{
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0%{
+    opacity: 0;
+    transform: translateY(100%);
+
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin button_style {
+  display: block;
+  font-size: 1.25rem;
+  font-family: $HELVETICA;
+  border: none;
+  font-weight: bold;
+  margin-top: $ONE_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  width: 95%;
+  background-color: $BLACK;
+  color: $WHITE;
+  padding: $ONE_REM;
+  cursor: pointer;
+}
+
+@mixin nav_icon_style {
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  height: $HEIGHT;
+  background-position: $CENTER;
+  background-size: $BACKGROUND_SIZE;
+  transition-duration: 300ms;
+}
+
+@mixin selected_style{
+    border: red solid 2px;
+}
+
+aside{
+  animation: slideInFromSide 1.5s;
+}
+
+
+body{
+  background-color: $WHITE;
+  font-family: $HELVETICA;
+}
+
+
+em{
+  visibility: hidden;
+}
+
+main{
+  padding-left: 10.75rem;
+  padding-right: $ONE_REM;
+  &>div{
+    animation: slideInFromBottom 0.5s;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: $TWO_REM;
+  background-color: $GENERAL_GREEN;
+  position: fixed;
+  height: 100%;
+  width: 8%;
+  border-radius: 50px 0 0 50px;
+  a {
+  &:hover{
+    animation: pulse 1s infinite;
+  }
+  }
+}
+
+#account{
+  background-image: $ACCOUNT_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $ACCOUNT_HOVER_ICON;
+  }
+}
+
+#garden{
+  background-image: $GARDEN_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $GARDEN_HOVER_ICON;
+  }
+}
+
+#community{
+  background-image: $COMMUNITY_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $COMMUNITY_HOVER_ICON;
+  }
+}
+
+#market{
+  background-image: $MARKETPLACE_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $MARKETPLACE_HOVER_ICON;
+  }
+}
+
+#robots{
+  background-image: $ROBOTS_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $ROBOTS_HOVER_ICON;
+  }
+}
+
+#recipes{
+  background-image: $RECIPES_ICON;
+  @include nav_icon_style;
+  &:hover{
+    background-image: $RECIPES_HOVER_ICON;
+  }
+}

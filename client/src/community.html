@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 23: iFarm</title>
+    <link rel="shortcut icon" href="assets/images/Logo_V.png" type="image/x-icon">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api/api-calls.js"></script>
+    <script src="assets/js/pages/garden/api-calls-garden.js"></script>
+    <script src="../../../../../Users/froot/Desktop/were-they-hacking-csgo/src/assets/js/api/api-communication-abstractor.js"></script>
+    <script src="assets/js/pages/community/community.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.2/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.9.4/vertx-eventbus.min.js"></script>
+    <script src="assets/js/pages/community/eventBus.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/community.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" id="account"><em>Account</em></a>
+    <a href="garden.html" id="garden"><em>Garden</em></a>
+    <a href="community.html" id="community"><em>Community</em></a>
+    <a href="market.html" id="market"><em>Market</em></a>
+    <a href="robots.html" id="robots"><em>Robots</em></a>
+    <a href="recipes.html" id="recipes"><em>Recipes</em></a>
+</nav>
+<main>
+    <h1>Community</h1>
+    <form id="addPost" action="#">
+        <label for="forumPost">iShowSpeed</label>
+        <br>
+        <input type="text" id="forumPost" name="forumPost" placeholder="Write your forum post here...">
+        <br>
+        <label for="img"></label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <br>
+        <input type="submit" value="Post">
+    </form>
+    <div id="posts">
+        <template id="postTemplate">
+            <div class="forumPost" data-postId="">
+                <h2></h2>
+                <p></p>
+                <img src="data:image/jpeg;base64,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" alt="Broccoli">
+                <div>
+                    <h3>Today at </h3>
+                    <div>
+                        <a href="#" class="like"><span>LIKE</span></a>
+                        <a href="#" class="commentButton"><span>COMMENT</span></a>
+                    </div>
+                </div>
+                <div class="hidden comments">
+                    <template id="commentTemplate">
+                        <div class="comment">
+                            <div>
+                                <h3>username</h3>
+                                <h4>Today at </h4>
+                                <a href="#" class="like"><span>LIKE</span></a>
+                            </div>
+                            <p>comment text</p>
+                        </div>
+                    </template>
+                    <template id="addCommentTemplate">
+                        <div>
+                            <form id="addComment">
+                                <label for="newComment">comment on this: </label>
+                                <input type="text" id="newComment">
+                                <input type="submit" value="Post">
+                            </form>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</main>
+</body>
+</html>

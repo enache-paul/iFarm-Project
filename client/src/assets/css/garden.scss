@@ -1,0 +1,466 @@
+@import "general.scss";
+
+$FERTILIZER_ICON: url("../images/fertilizer.png");
+$TEMPERATURE_ICON: url("../images/thermometer.png");
+$WATER_ICON: url("../images/drop.png");
+
+@mixin default_gray_container {
+  background-color: $GRAY_DIV_COLOR;
+  padding: $TWO_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+@mixin default_white_container{
+  background-color: $WHITE;
+  padding: $TWO_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+
+@mixin garden_icons{
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  background-position: center right 1.5rem;
+  background-size: $TWO_REM;
+}
+
+aside{
+  padding: $TWO_REM;
+  width: 38%;
+  background-color: $GRAY_DIV_COLOR;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  h3{
+    margin-bottom: $TWO_REM;
+    font-size: 1.25rem;
+  }
+}
+
+button{
+  @include button_style;
+}
+
+div{
+  h4{
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: $ONE_REM;
+    margin-bottom: $ONE_REM;
+    text-transform: capitalize;
+  }
+  &#warnings{
+    background-color: $WHITE;
+    padding: $ONE_REM;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+  }
+  #scan-info{
+    display: $FLEX;
+    justify-content: space-between;
+  }
+  #warnings{
+    h5{
+      font-size: 1.5rem;
+      padding: $ONE_REM 0 0 0;
+    }
+    li{
+      font-size: 1.25rem;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+      background-color: $GRAY_DIV_COLOR;
+      border-radius: $GENERAL_BORDER_RADIUS;
+      padding: $ONE_REM;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+h1{
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+main{
+  display: $FLEX;
+  justify-content: space-between;
+  padding-top: $ONE_REM;
+  padding-bottom: $ONE_REM;
+  &>div{
+    padding: $TWO_REM;
+    width: 54%;
+    height: $ONE_HUNDRED_PERCENT;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    background-color: $GRAY_DIV_COLOR;
+  }
+  div{
+    h3{
+      font-size: 2.5rem;
+      margin-top: -0.75rem;
+    }
+    #environment-stats{
+      ul{
+        display: $FLEX;
+        justify-content: space-between;
+        margin: 2rem 0;
+        li{
+          padding: 3.5rem 3rem;
+          width: 22%;
+          border-radius: $GENERAL_BORDER_RADIUS;
+          background-color: $WHITE;
+        }
+      }
+    }
+    div{
+      li{
+        span{
+          font-weight: bold;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+p{
+  font-size: 1.2rem;
+}
+
+span{
+  color: $GENERAL_GREEN;
+  #surface{
+    color: $BLACK;
+  }
+  #quantity{
+    color: $BLACK;
+  }
+  #price{
+    color: $BLACK;
+  }
+}
+
+video {
+  width: $ONE_HUNDRED_PERCENT;
+  height: $ONE_HUNDRED_PERCENT;
+}
+
+#addScan {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: $GENERAL_GREEN;
+  border: none;
+  color: $WHITE;
+  width: 8rem;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  transition-duration: 5ms;
+  &:hover{
+    cursor: pointer;
+    background-color: $WHITE;
+    color: $GENERAL_GREEN;
+    border: $GENERAL_GREEN solid 2px;
+  }
+}
+
+#chart {
+  width: $ONE_HUNDRED_PERCENT;
+  height: $ONE_HUNDRED_PERCENT;
+}
+
+#chart-placeholder{
+  background-color: $WHITE;
+  padding: $ONE_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  ul{
+    background-color: $GRAY_DIV_COLOR;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    padding: 1.25rem;
+    li{
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+      span{
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+#fertilizer{
+  background-image: $FERTILIZER_ICON;
+  @include garden_icons;
+}
+
+#fertilizer-container {
+  font-size: 1.25rem;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  padding: $TWO_REM;
+  background-color: $WHITE;
+  button{
+    @include button_style;
+  }
+  li {
+    margin-top: 0.5rem;
+    display: block;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
+#library{
+  @include default_white_container;
+  width: 90%;
+  height: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+//width
+::-webkit-scrollbar{
+  width: 10px;
+  &-track{
+    background: transparent;
+  }
+  &-thumb{
+    background: #888;
+    border-radius: 40px;
+    &:hover{
+      background: #555;
+    }
+  }
+}
+
+#library-vegetables{
+  height: 35rem;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+  div{
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
+#plants-overview{
+  @include default_gray_container;
+  padding-bottom: 1.6rem;
+  width: 38%;
+  div{
+    div{
+      border-radius: $GENERAL_BORDER_RADIUS;
+      transition-duration: 400ms;
+      &:hover{
+        cursor: pointer;
+      }
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    img{
+      width: 5rem;
+      height: 5rem;
+      border-radius: $GENERAL_BORDER_RADIUS;
+    }
+    p{
+      margin: $TWO_REM;
+    }
+  }
+  h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  h3{
+    margin-top: 1.5rem;
+    margin-bottom: $ONE_REM;
+    font-size: $TWO_REM;
+  }
+  h4{
+    font-size: 1.5rem;
+    margin-top: $ONE_REM;
+    text-transform: capitalize;
+    margin-bottom: -1rem;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  p{
+    font-size: 1.25rem;
+  }
+}
+
+#plants-summary{
+  h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  h3{
+    margin-top: 1.5rem;
+    margin-bottom: $ONE_REM;
+    font-size: $TWO_REM;
+  }
+  h4{
+    font-size: 1.5rem;
+    margin-top: $ONE_REM;
+    text-transform: capitalize;
+    margin-bottom: -1rem;
+  }
+}
+
+#plant-summary{
+  @include default_gray_container;
+  width: 38%;
+  h4{
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  li{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  p{
+    font-size: 1.25rem;
+  }
+}
+
+#scan{
+  display: $FLEX;
+  justify-content: space-between;
+  margin-top: $ONE_REM;
+  align-items: flex-end;
+    ul {
+      li {
+        padding-top: $TWO_REM;
+        padding-left: $ONE_REM;
+        height: 5rem;
+        width: 9rem;
+        font-weight: bold;
+        background-color: lightgrey;
+        border-radius: $GENERAL_BORDER_RADIUS;
+        text-transform: capitalize;
+        transition-duration: 300ms;
+        &:hover {
+          height: 5rem;
+          width: 9rem;
+          border-radius: $GENERAL_BORDER_RADIUS;
+        }
+        a {
+          text-decoration: none;
+          color: $BLACK;
+        }
+    }
+}
+}
+
+#scan-of-garden {
+  img {
+    width: 97%;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    height: 97%;
+  }
+}
+
+#select-zone {
+  h3 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: $ONE_REM;
+    margin-bottom: $ONE_REM;
+    text-transform: capitalize;
+  }
+}
+
+#summary {
+  @include default_white_container;
+  ul {
+    &:last-of-type {
+      margin-left: $ONE_REM;
+    }
+  }
+}
+
+#temperature{
+  background-image: $TEMPERATURE_ICON;
+  @include garden_icons;
+}
+
+#vegetables-in-garden {
+  li {
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+#water{
+  background-image: $WATER_ICON;
+  @include garden_icons;
+}
+
+.hidden{
+  display: none;
+}
+
+.plants{
+  display: $FLEX;
+  text-transform: capitalize;
+  flex-direction: row;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.navigation-buttons{
+  img{
+    cursor: pointer;
+    height: 2.5rem;
+    &:first-child{
+      transform: scaleX(-1);
+      max-height: 2.5rem;
+      max-width: 2.5rem;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  margin-top: $ONE_REM;
+}
+
+.zone-container {
+  display: grid;
+  width: auto;
+  height: 22rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  padding: $TWO_REM;
+  div{
+    margin: -2rem;
+    opacity: 25%;
+    background-color: $BLACK;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    cursor: pointer;
+    &:hover{
+      background-color: $BLACK;
+      opacity: $ONE_HUNDRED_PERCENT;
+    }
+  }
+}
+
+.plants{
+  margin-top: $ONE_REM;
+  &:hover{
+    background-color: $GRAY_DIV_COLOR;
+    border-radius: $GENERAL_BORDER_RADIUS;
+  }
+}
+
+.selected{
+  @include selected_style;
+}

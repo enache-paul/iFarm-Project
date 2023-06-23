@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 23: iFarm</title>
+    <link rel="shortcut icon" href="assets/images/Logo_V.png" type="image/x-icon">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/recipes/recipes.js"></script>
+    <script src="assets/js/pages/recipes/search-bar.js"></script>
+    <script src="assets/js/pages/recipes/util/recipes-by-selected-category.js"></script>
+    <script src="assets/js/pages/garden/add-vegetable.js"></script>
+    <script src="assets/js/pages/garden/ui.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/recipes.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" id="account"><em>Account</em></a>
+    <a href="garden.html" id="garden"><em>Garden</em></a>
+    <a href="community.html" id="community"><em>Community</em></a>
+    <a href="market.html" id="market"><em>Market</em></a>
+    <a href="robots.html" id="robots"><em>Robots</em></a>
+    <a href="recipes.html" id="recipes"><em>Recipes</em></a>
+</nav>
+<main>
+    <div>
+        <h2>Meals</h2>
+        <p>
+            We will automatically tell you which ingredients you still have in stock and
+            which ones you still need to grow to prepare the meal
+        </p>
+
+        <h3>Meal categories</h3>
+        <p>Choose a meal category</p>
+        <div id="meal-categories">
+            <ul id="categories">
+            </ul>
+        </div>
+    </div>
+    <aside>
+        <h2 class="category">Beef</h2>
+        <p>An overview of all the <span class="category">beef</span> dishes</p>
+
+        <h3>Overview</h3>
+        <form action="#">
+            <label for="searchBar"></label>
+            <br>
+            <input type="text" id="searchBar" name="searchBar" placeholder="search for dish you'd like">
+            <input type="submit" value="search">
+        </form>
+        <div id="category-recipes">
+            <ul id="meals">
+                
+            </ul>
+        </div>
+
+        <div>
+            <h4>Ingredients</h4>
+            <p>These are all the ingredients needed</p>
+            <ul class="ingredients-list">
+                <li><span>Ingredient 1</span> <a href="garden.html">grow</a> <a href="market.html">buy</a></li>
+                <li><span>Ingredient 2</span> <a href="garden.html">grow</a> <a href="market.html">buy</a></li>
+                <li><span>Ingredient 3</span> <a href="garden.html">grow</a> <a href="market.html">buy</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+</body>
+</html>

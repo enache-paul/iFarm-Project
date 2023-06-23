@@ -1,0 +1,598 @@
+aside {
+  -webkit-animation: slideInFromSide 1.5s;
+          animation: slideInFromSide 1.5s;
+}
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+button {
+  display: block;
+  font-size: 1.25rem;
+  font-family: Helvetica, sans-serif;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 30px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+em {
+  visibility: hidden;
+}
+
+main {
+  padding-left: 10.75rem;
+  padding-right: 1rem;
+}
+main > div {
+  -webkit-animation: slideInFromBottom 0.5s;
+          animation: slideInFromBottom 0.5s;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  background-color: #6bc247;
+  position: fixed;
+  height: 100%;
+  width: 8%;
+  border-radius: 50px 0 0 50px;
+}
+nav a:hover {
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#account {
+  background-image: url("../images/account.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#account:hover {
+  background-image: url("../images/account-hover.png");
+}
+
+#garden {
+  background-image: url("../images/garden.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#garden:hover {
+  background-image: url("../images/garden-hover.png");
+}
+
+#community {
+  background-image: url("../images/community.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#community:hover {
+  background-image: url("../images/community-hover.png");
+}
+
+#market {
+  background-image: url("../images/marketplace.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#market:hover {
+  background-image: url("../images/marketplace-hover.png");
+}
+
+#robots {
+  background-image: url("../images/robot.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#robots:hover {
+  background-image: url("../images/robot-hover.png");
+}
+
+#recipes {
+  background-image: url("../images/recipe.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+}
+#recipes:hover {
+  background-image: url("../images/recipe-hover.png");
+}
+
+aside {
+  padding: 2rem;
+  width: 38%;
+  background-color: #EAEAEA;
+  border-radius: 30px;
+}
+aside h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+aside h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+div h4 {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+div#warnings {
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 30px;
+}
+div #scan-info {
+  display: flex;
+  justify-content: space-between;
+}
+div #warnings h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+div #warnings li {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  background-color: lightgray;
+  border-radius: 30px;
+  padding: 1rem;
+}
+div #warnings li:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+main > div {
+  padding: 2rem;
+  width: 54%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #EAEAEA;
+}
+main div h3 {
+  font-size: 2.5rem;
+  margin-top: -0.75rem;
+}
+main div #environment-stats ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+main div #environment-stats ul li {
+  padding: 3.5rem 3rem;
+  width: 22%;
+  border-radius: 30px;
+  background-color: white;
+}
+main div div li span {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+span {
+  color: #6bc247;
+}
+span #surface {
+  color: black;
+}
+span #quantity {
+  color: black;
+}
+span #price {
+  color: black;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+#addScan {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #6bc247;
+  border: none;
+  color: white;
+  padding: 0.75rem 3rem;
+  border-radius: 30px;
+  transition-duration: 300ms;
+}
+#addScan:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #6bc247;
+  border: #6bc247 solid 2px;
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+}
+
+#chart-placeholder {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 30px;
+}
+#chart-placeholder ul {
+  background-color: #EAEAEA;
+  margin-top: 1rem;
+  border-radius: 30px;
+  padding: 1.25rem;
+}
+#chart-placeholder ul li {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+#chart-placeholder ul li span {
+  font-size: 2rem;
+}
+
+#fertilizer {
+  background-image: url("../images/fertilizer.png");
+  background-repeat: no-repeat;
+  background-position: center right 1.5rem;
+  background-size: 2rem;
+}
+
+#fertilizer-container {
+  font-size: 1.25rem;
+  border-radius: 30px;
+  padding: 2rem;
+  background-color: white;
+}
+#fertilizer-container li {
+  margin-top: 0.5rem;
+  display: block;
+}
+#fertilizer-container li:first-child {
+  margin-top: 0;
+}
+
+#library {
+  background-color: white;
+  border-radius: 30px;
+  padding: 2rem;
+  width: 90%;
+  height: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#library-vegetables {
+  height: 35rem;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+}
+#library-vegetables div:first-child {
+  margin-top: 0;
+}
+
+#plants-overview {
+  background-color: #EAEAEA;
+  padding: 2rem;
+  border-radius: 30px;
+  width: 38%;
+}
+#plants-overview div img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 30px;
+}
+#plants-overview div p {
+  margin: 2rem;
+}
+#plants-overview h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+#plants-overview h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+#plants-overview h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  margin-bottom: -1rem;
+}
+#plants-overview h4:first-child {
+  margin-top: 0;
+}
+#plants-overview p {
+  font-size: 1.25rem;
+}
+
+#plants-summary h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+#plants-summary h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+#plants-summary h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  margin-bottom: -1rem;
+}
+
+#plant-summary {
+  background-color: #EAEAEA;
+  padding: 2rem;
+  border-radius: 30px;
+  width: 38%;
+}
+#plant-summary h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+#plant-summary h4:first-child {
+  margin-top: 0;
+}
+#plant-summary li {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+#plant-summary p {
+  font-size: 1.25rem;
+}
+
+#scan {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: flex-end;
+}
+#scan ul li {
+  height: 5rem;
+  width: 9rem;
+  font-weight: bold;
+  background-color: lightgrey;
+  border-radius: 30px;
+  text-transform: capitalize;
+  transition-duration: 300ms;
+}
+#scan ul li:hover {
+  background-color: darkgrey;
+  height: 5rem;
+  width: 9rem;
+  border-radius: 30px;
+}
+#scan ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+#scan-of-garden img {
+  width: 97%;
+  border-radius: 30px;
+  height: 96.5%;
+}
+
+#select-zone h3 {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+#summary {
+  background-color: white;
+  border-radius: 30px;
+  padding: 2rem;
+}
+#summary ul:last-of-type {
+  margin-left: 1rem;
+}
+
+#temperature {
+  background-image: url("../images/thermometer.png");
+  background-repeat: no-repeat;
+  background-position: center right 1.5rem;
+  background-size: 2rem;
+}
+
+#vegetables-in-garden li {
+  padding: 2rem 0 0 2rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  width: 4rem;
+}
+#vegetables-in-garden li:last-child {
+  margin-bottom: 0;
+}
+
+#water {
+  background-image: url("../images/drop.png");
+  background-repeat: no-repeat;
+  background-position: center right 1.5rem;
+  background-size: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.plants {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.navigation-buttons img {
+  cursor: pointer;
+  height: 2.75rem;
+}
+.navigation-buttons img:first-child {
+  transform: scaleX(-1);
+  max-height: 2.5rem;
+  max-width: 2.5rem;
+}
+
+.zone-container {
+  display: grid;
+  width: auto;
+  height: 22rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  padding: 2rem;
+}
+.zone-container div {
+  margin: -2rem;
+  opacity: 25%;
+  background-color: black;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.zone-container div:hover {
+  background-color: black;
+  opacity: 100%;
+}
+
+.plants {
+  margin-top: 1.5rem;
+  background-color: #f3f3f3;
+  border-radius: 30px;
+  transition-duration: 300ms;
+}
+.plants:hover {
+  background-color: #EAEAEA;
+  border-radius: 40px;
+}
+
+.selected {
+  border: red solid 2px;
+}
+/*# sourceMappingURL=garden.css.map */

@@ -1,0 +1,591 @@
+openapi: 3.0.3
+info:
+  title: 'Mars Concept Title - Mars-23'
+  description: 'Description of the Mars API - Mars-23'
+  version: 0.0.1
+servers:
+  - url: https://project-ii.ti.howest.be/mars-23
+    description: 'Public API'
+  - url: http://localhost:8080/
+    description: 'Local API'
+tags:
+  - name: ownedPlants
+  - name: forumPosts
+  - name: gardens
+  - name: plants
+  - name: robots
+paths:
+  /api/gardens/{gardenId}/ownedPlants:
+    post:
+      description: add owned plant to garden
+      operationId: addPlantToGarden
+      tags:
+        - ownedPlants
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description: The garden id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plantId:
+                  type: integer
+              required:
+                - plantId
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ownedPlant'
+    put:
+      description: harvest the plant
+      summary: harvest
+      operationId: harvest
+      tags: 
+        - ownedPlants
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description: The garden id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plantId:
+                  type: integer
+                  example: 1
+              required:
+                - ownedPlantId
+      responses:
+        '204':
+          description: Deleted
+            
+
+  /api/gardens/{gardenId}/scans:
+    post:
+      description: Add a scan to an ownedPlant
+      operationId: createScan
+      tags:
+        - ownedPlants
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description: The garden id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownedPlantId:
+                  type: integer
+              required:
+                - ownedPlantId
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scan'
+
+  /api/forumposts:
+    post:
+      description: Add a forum post
+      operationId: createForumPost
+      tags:
+        - forumPosts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gardenId:
+                  type: integer
+                text:
+                  type: string
+                imgLink:
+                  type: string
+              required:
+                - gardenId
+                - text
+                - imgLink
+            examples:
+              default-forum-post-object:
+                value:
+                  gardenId: 2
+                  text: "Check out my awesome cucumber!"
+                  imgLink: "https://sumflowers.com"
+                description: Here is how a plant should be sent in the POST request.
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forumpost'
+    get:
+      description: Get recent forum posts
+      operationId: getForumPosts
+      tags:
+        - forumPosts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forumpostSet'
+
+  /api/forumposts/{forumId}:
+    get:
+      description: Get a forum post by id
+      operationId: getForumPost
+      tags:
+        - forumPosts
+      parameters:
+        - in: path
+          name: forumId
+          required: true
+          schema:
+            type: integer
+          description: The forum id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forumpost'
+              examples:
+                default:
+                  value:
+                    id: 4
+                    gardenId: 1
+                    text: "Check out my totatoes"
+                    imgLink: "https://google.com"
+                    uploadTime: "21-01-02 00:00:00"
+                  description: This is how a forum post is returned
+
+  /api/gardens:
+    post:
+      description: Create a new garden
+      operationId: createGarden
+      tags:
+        - gardens
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                tier:
+                  type: string
+              required:
+                - name
+                - tier
+            examples:
+              default-put-body:
+                value:
+                  name: "bob"
+                  tier: "FREE"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/garden'
+              examples:
+                default:
+                  value:
+                    id: 7
+                    name: "bob"
+                    tier: "PREMIUM"
+                  description: This is how a garden is returned
+
+  /api/gardens/{gardenId}:
+    get:
+      description: Get a garden by id
+      operationId: getGarden
+      tags:
+        - gardens
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description: The garden id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/garden'
+              examples:
+                default:
+                  value:
+                    id: 7
+                    name: "bob"
+                    tier: "PREMIUM"
+                  description: This is how a garden is returned
+
+    put:
+      description: Update a garden tier by id
+      operationId: updateGarden
+      tags:
+        - gardens
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description:  The garden ID
+          example: 2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tier:
+                  type: string
+              required:
+                - tier
+            examples:
+              default-put-body:
+                value:
+                  tier: "PREMIUM"
+      responses:
+        '200':
+          description: Created
+
+  /api/plants/{plantId}:
+    get:
+      description: Get a plant by id
+      operationId: getPlant
+      tags:
+        - plants
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: integer
+          description: The plant id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plant'
+              examples:
+                avocado:
+                  value:
+                    name: "Avocado"
+                    id: 22
+                    imgLink: "https://examplelink.com"
+                  description: This is how a plant is returned
+
+  /api/plants:
+    get:
+      description: Get all plants
+      operationId: getAllPlants
+      tags:
+        - plants
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/plant'
+    post:
+      description: Add a plant
+      operationId: createPlant
+      tags:
+        - plants
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                imgLink:
+                  type: string
+              required:
+                - name
+                - imgLink
+            examples:
+              default-plant-object:
+                value:
+                  name: "Sun Flower"
+                  imgLink: "sumflowers.com"
+                description: Here is how a plant should be sent in the POST request.
+          text/plain:
+            schema:
+              type: string
+              example: "hehehe"
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plant'
+
+  /api/forumposts/comments:
+    post:
+      description: Add a comment
+      operationId: createComment
+      tags:
+        - forumPosts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: integer
+                  example: 2
+                gardenId:
+                  type: integer
+                  example: 2
+                text:
+                  type: string
+                  example: "cool"
+              required:
+                - postId
+                - gardenId
+                - text
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/comment'
+  /api/robots/{gardenId}:
+    post:
+      description: add a robot a to garden
+      operationId: addRobotToGarden
+      tags:
+        - robots
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: integer
+          description: The garden id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                robotName:
+                  type: string
+                  example: "Lazy robot"
+                description:
+                  type: string
+                  example: "A cute robot that takes too long to configure!"
+              required:
+                - robotName
+                - description
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/robot'
+
+components:
+  schemas:
+    plant:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Guacamole"
+        id:
+          type: integer
+          minimum: 1
+          example: 7
+        imgLink:
+          type: string
+          example: "https://google.com/images/sillycat69"
+      required:
+        - name
+        - id
+        - imgLink
+      example:
+        name: "Avocado"
+        id: 21
+        imgLink: "https://funnycatphotos/269"
+
+    ownedPlant:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+          example: 1
+        garden:
+          $ref: "#/components/schemas/garden"
+        plant:
+          $ref: "#/components/schemas/plant"
+        status:
+          type: string
+          example: "FUTURE"
+        scans:
+          type: array
+          items:
+            $ref: "#/components/schemas/scan"
+      required:
+        - id
+        - garden
+        - plant
+
+    garden:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+          example: 7
+        name:
+          type: string
+          example: "bob"
+        tier:
+          type: string
+          example: "FREE, PREMIUM, PREMIUMXXL"
+        posts:
+          $ref: "#/components/schemas/forumpostSet"
+      required:
+        - id
+        - tier
+      example:
+        id: 21
+        tier: "FREE"
+
+    forumpost:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+          example: 9
+        gardenId:
+          type: integer
+          minimum: 1
+          example: 25
+        text:
+          type: string
+          example: "Check out my big tomatoes"
+        imgLink:
+          type: string
+          example: "https://google.com"
+        uploadTime:
+          type: string
+          example: "2001-01-02 00:00:00"
+
+    forumpostSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/forumpost'
+
+    scan:
+      type: object
+      properties:
+        ownedPlant:
+          $ref: '#/components/schemas/garden'
+        scanTime:
+          type: string
+          example: "2001-01-02 00:00:00"
+        fertiliizerLevel:
+          type: integer
+          example: 50
+        waterlevel:
+          type: integer
+          example: 50
+        expectedYield:
+          type: integer
+          example: 50
+        health:
+          type: integer
+          example: 50
+        growth:
+          type: integer
+          example: 50
+
+    comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+          example: 2
+        garden:
+          $ref: '#/components/schemas/garden'
+        text:
+          type: string
+          example: "wauw beautiful"
+        likes:
+          type: integer
+          example: 0
+
+    robot:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Water robot"
+        garden:
+          type: integer
+          example: 4
+        description:
+          type: string
+          example: "A robot that waters your plants"
+        batteryLevel:
+          type: integer
+          example: 45
+

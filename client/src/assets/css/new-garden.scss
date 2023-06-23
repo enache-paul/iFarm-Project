@@ -1,0 +1,46 @@
+@import "general.scss";
+
+body{
+  background-color: $WHITE;
+  font-family: $HELVETICA;
+  font-size: 1.5rem;
+}
+
+form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  input {
+    &[type="text"] {
+      border: $GENERAL_GREEN 2px solid;
+      padding: $ONE_REM;
+      color: black;
+      font-size: 1.25rem;
+      border-radius: $GENERAL_BORDER_RADIUS;
+    }
+    &[type="submit"]{
+      border: none;
+      box-sizing: content-box;
+      padding: $ONE_REM;
+      border-radius: $GENERAL_BORDER_RADIUS;
+      font-size: 1.25rem;
+      background-color: $GENERAL_GREEN;
+      color: $WHITE;
+      font-weight: bold;
+      transition-duration: 300ms;
+      &:hover{
+        background-color: $WHITE;
+        color: $GENERAL_GREEN;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+h2{
+  width: 40rem;
+  text-align: left;
+}
+
+

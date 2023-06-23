@@ -1,0 +1,76 @@
+asyncapi: 2.5.0
+info:
+  title: Ifarm
+  version: 1.0.0
+  description: Eventbus used for like notifications
+servers:
+  production:
+    url: https://project-ii.ti.howest.be/mars-23
+    protocol: WebSockets
+  local:
+    url: http://localhost:8080/
+    protocol: WebSockets
+channels:
+  events/to/server:
+    subscribe:
+      operationId: sendLike
+      message:
+        $ref: '#/components/messages/sendLike'
+  events/to/users/{userId}:
+    publish:
+      operationId: receiveLike
+      message:
+        $ref: '#/components/messages/receiveLike'
+components:
+  messages:
+    sendLike:
+      name: sendLike
+      title: user liked something
+      summary: inform server about a like
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/sendLikePayload'
+    receiveLike:
+      name: receiveLike
+      title: something got liked
+      summary: inform client about something of theirs being liked
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/receiveLikePayload'
+  schemas:
+    sendLikePayload:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of event
+          example: POST_LIKE
+        gardenId:
+          type: integer
+          description: id of the garden that liked something
+          example: 1
+        postId:
+          type: integer
+          description: id of post (only if type is POST_LIKE)
+          example: 1
+        commentId:
+          type: integer
+          description: id of comment (only if the type is COMMENT_LIKE)
+          example: 1
+      required:
+        - type
+        - gardenId
+    receiveLikePayload:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of event
+          example: COMMENT_LIKE
+        gardenName:
+          type: string
+          description: name of garden that like something
+          example: 1
+      required:
+        - type
+        - gardenName

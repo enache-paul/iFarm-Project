@@ -1,0 +1,200 @@
+@import "general.scss";
+
+$ACCOUNT_ICON: url("../images/account.png");
+$LIKE_ICON: url("../images/heart.png");
+$LIKE_ICON_HOVER: url("../images/heart-hover.png");
+$COMMENT_ICON: url("../images/comment.png");
+$COMMENT_ICON_HOVER: url("../images/comment-hover.png");
+$BORDER_COLOR: #ccc;
+
+@mixin community_like_comment{
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  background-size: $TWO_REM;
+  background-position: top ;
+  transition-duration: 200ms;
+}
+
+
+div{
+  #post{
+    display: $FLEX;
+    align-items: $CENTER;
+    justify-content: space-between;
+  }
+}
+
+form{
+  input[type=text] {
+    width: 100%;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+  }
+  &#addComment{
+    margin-top: -2rem;
+    margin-bottom: 1.5rem;
+    input[type=text]{
+      margin-top: 0.5rem;
+      height: 6rem;
+      border: none;
+    }
+    input[type=submit]{
+      width: $ONE_HUNDRED_PERCENT;
+    }
+  }
+  &#addPost {
+    width: 95%;
+    padding: 1.5rem;
+    background-color: rgb(243,243,243);
+    border-radius: 40px;
+    input[type=text] {
+      padding: $ONE_REM;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid $BORDER_COLOR;
+      height: 6rem;
+    }
+  }
+}
+
+h1{
+  font-size: 3rem;
+  padding: $ONE_REM 40%;
+}
+
+input {
+  &[type=submit] {
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: $GENERAL_GREEN;
+    color: $WHITE;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+  }
+  &[type=submit]:hover {
+    cursor: pointer;
+    background-color: $WHITE;
+    color: $GENERAL_GREEN;
+  }
+}
+
+label[for=forumPost]{
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-image: $ACCOUNT_ICON;
+  padding-top: 0.25rem;
+  padding-left: $TWO_REM;
+  background-size: 1.5rem;
+  background-repeat: $BACKGROUND_NO_REPEAT;
+  background-position: $CENTER left;
+}
+
+main{
+  margin-left: 10.75rem;
+  padding: $TWO_REM;
+  height: 100%;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+
+
+
+span {
+  display: $FLEX;
+  justify-content: $CENTER;
+  padding-top: $ONE_REM;
+  height: fit-content;
+}
+
+#posts{
+  text-transform: capitalize;
+  display: $FLEX;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  h2 {
+    font-size: 1.1rem;
+    color: $BLACK;
+  }
+  p {
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: $BLACK;
+  }
+  .forumPost {
+    width: 20rem;
+    h2{
+      text-transform: capitalize;
+    }
+    h3{
+      font-size: 1.1rem;
+      color: $BLACK;
+    }
+    img {
+      width: $ONE_HUNDRED_PERCENT;
+      border-radius: $GENERAL_BORDER_RADIUS;
+    }
+  }
+  div div{
+    display: $FLEX;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      display: $FLEX;
+      flex-direction: row;
+      margin-top: $ONE_REM;
+    }
+    .comment {
+      display: $FLEX;
+      border-radius: 40px;
+      flex-direction: column;
+      background-color: transparent;
+      margin: 0.25rem;
+      padding: 0.30rem;
+    }
+  }
+  &>div {
+    padding: $TWO_REM;
+    background-color: rgb(243,243,243);
+    margin-top: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    width: 50%;
+    margin-right: $TWO_REM;
+    height: fit-content;
+  }
+}
+
+.like{
+  background-image: $LIKE_ICON;
+  @include community_like_comment;
+  width: $TWO_REM;
+  padding: $ONE_REM 0.5rem;
+  &:hover {
+    background-image: $LIKE_ICON_HOVER;
+  }
+}
+.commentButton{
+  background-image: $COMMENT_ICON;
+  @include  community_like_comment;
+  padding: $TWO_REM 0.5rem;
+  &:hover {
+    background-image: $COMMENT_ICON_HOVER;
+  }
+}
+#newGarden {
+  padding: $ONE_REM;
+  size: 30rem 30rem;
+  border: 0.5rem solid $BORDER_COLOR;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  h2 {
+    padding-bottom: 0.5rem;
+  }
+}
+.hidden {
+  visibility: hidden;
+}

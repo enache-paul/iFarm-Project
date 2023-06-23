@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 23: iFarm</title>
+    <link rel="shortcut icon" href="assets/images/Logo_V.png" type="image/x-icon">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/garden/garden.js"></script>
+    <script src="assets/js/pages/garden/api-calls-garden.js"></script>
+    <script src="assets/js/pages/garden/add-vegetable.js"></script>
+    <script src="assets/js/api/api-calls.js"></script>
+    <script src="../../../../../Users/froot/Desktop/were-they-hacking-csgo/src/assets/js/api/api-communication-abstractor.js"></script>
+    <script src="assets/js/pages/garden/chart.js"></script>
+    <script src="assets/js/pages/garden/scan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/pages/garden/scan-plant.js"></script>
+    <script src="assets/js/pages/garden/ui.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/garden.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" id="account"><em>Account</em></a>
+    <a href="garden.html" id="garden"><em>Garden</em></a>
+    <a href="community.html" id="community"><em>Community</em></a>
+    <a href="market.html" id="market"><em>Market</em></a>
+    <a href="robots.html" id="robots"><em>Robots</em></a>
+    <a href="recipes.html" id="recipes"><em>Recipes</em></a>
+</nav>
+<main>
+    <div>
+        <h1>Your Vegetable Garden</h1>
+        <p>Helping you to make the right decision and seed your plants</p>
+        <div id="environment-stats">
+            <ul>
+                <li id="temperature"><span>23</span> °C <br>Air Temperature</li>
+                <li id="fertilizer"><span>25</span> kg <br>Fertilizer left</li>
+                <li id="water"><span>53</span> liters <br>Water left</li>
+            </ul>
+        </div>
+        <div id="scan-info">
+            <div>
+                <h3>Scan</h3>
+                <p>Last scan: Yesterday 13:35:53
+            </div>
+            <button id="addScan">addScan</button>
+        </div>
+        <template id="scannerTemplate">
+            <div id="scanner" style="padding: 10rem; background-color: #EAEAEA">
+                <h2 style="font-size: 2rem; font-weight: bold;">Scan</h2>
+                <video></video>
+                <button style="background-color: #6bc247; border-radius: 30px; border: solid white 5px; padding:1.5rem; font-size: 1.5rem">Scan now</button>
+            </div>
+        </template>
+        <div id="scan">
+            <div id="scan-of-garden">
+                <img src="assets/images/garden-scan.png" alt="garden-scan" title="Garden scan">
+            </div>
+            <div id="vegetables-in-garden">
+                <ul>
+                    <li class="add-crop">Add Crop</li>  
+                    <li class="add-crop">Add Crop</li>
+                    <li class="add-crop">Add Crop</li>
+                    <li class="add-crop">Add Crop</li>
+                    <li class="add-crop">Add Crop</li>
+                    <li class="fixed-add-crop">Add Crop</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <aside id="statistics" aria-label="" class="">
+        <h2>Statistics</h2>
+        <p>View the statistics of your plants</p>
+        <div>
+            <h4>Tomatoes</h4>
+            <div id="chart-placeholder">
+                <div>
+                    <canvas id="chart"></canvas>
+                </div>
+                <ul>
+                    <li>Expected Yield:&nbsp;<span id="yield">0</span> %</li>
+                    <li>Growth:&nbsp;&emsp;&emsp;&emsp;&ensp;<span id="growth">0</span> %</li>
+                    <li>Health:&nbsp;&emsp;&emsp;&emsp;&ensp;&nbsp;<span id="health">0</span> %</li>
+                    <li>Last scan time:&nbsp;&nbsp;<span id="time">No scans found</span></li>
+                </ul>
+            </div>
+            <div id="warnings">
+                <h5>Warnings</h5>
+                <ul>
+                    <li class="water"></li>
+                    <li class="fertilizer"></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <aside id="plants-overview" aria-label="" class="hidden">
+        <h2>Add Growable</h2>
+        <p>Add any growable you want into your vegetable garden.</p>
+        <h3>Library</h3>
+            <div id="library">
+                    <div id="library-vegetables">
+                    </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <img src="assets/images/next.png" title="back" alt="back" id="back1">
+            </div>
+    </aside>
+
+    <aside id="plant-summary" aria-label="" class="hidden">
+        <h2>Add Growable</h2>
+        <p>Add any growable you want into your vegetable garden.</p>
+
+        <h3>Library</h3>
+        <div id="summary">
+            <h4>Tomatoes</h4>
+            <ul>
+                <li>Difficulty: Easy</li>
+                <li>Duration: 50-60 days</li>
+            </ul>
+
+            <h4>Steps</h4>
+            <ol>
+
+            </ol>
+
+            <h4>Meal Suggestions</h4>
+            <p>The meal suggestions are based on what you're currently growing in your garden.</p>
+
+            <h4>Meals</h4>
+            <p>Carrot Tomato Salad</p>
+            <ul>
+                <li>Carrots</li>
+                <li>Tomato</li>
+                <li>Cucumber</li>
+            </ul>
+        </div>
+
+        <div class="navigation-buttons">
+
+            <img src="assets/images/next.png" title="back" alt="back" id="back2">
+            <img src="assets/images/next.png" title="next" alt="next" id="next1">
+
+        </div>
+    </aside>
+
+    <aside id="select-zone" aria-label="" class="hidden">
+        <h2>Add Growable</h2>
+        <p>Add any growable you want into your vegetable garden.</p>
+
+        <h3>Select Zone</h3>
+        <div class="zone-container">
+            <div class="div1"> </div>
+            <div class="div2"> </div>
+            <div class="div3"> </div>
+            <div class="div4"> </div>
+            <div class="div5"> </div>
+            <div class="div6"> </div>
+            <div class="div7"> </div>
+            <div class="div8"> </div>
+            <div class="div9"> </div>
+            <div class="div10"> </div>
+            <div class="div11"> </div>
+            <div class="div12"> </div>
+            </div>
+
+        <h3>Suggested Fertilizer</h3>
+        <div id="fertilizer-container">
+            <ul>
+                <li>Selected Surface: <span id="surface">0</span>m2</li>
+                <li>Quantity Needed: <span id="quantity">0</span>kg</li>
+                <li>Price: <span id="price">0</span>Mc</li>
+            </ul>
+
+            <button>purchase</button>
+        </div>
+
+        <div class="navigation-buttons">
+
+            <img src="assets/images/next.png" title="back" alt="back" id="back3">
+            <img src="assets/images/next.png" title="next" alt="next" id="next2">
+
+        </div>
+    </aside>
+</main>
+</body>
+</html>

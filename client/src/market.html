@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MARKET - NOT IMPLEMENTED</title>
+    <link rel="shortcut icon" href="assets/images/Logo_V.png" type="image/x-icon">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api/api-calls.js"></script>
+    <script src="assets/js/pages/market/market.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/market.css">
+
+</head>
+<body>
+<nav>
+    <a href="index.html" id="account"><em>Account</em></a>
+    <a href="garden.html" id="garden"><em>Garden</em></a>
+    <a href="community.html" id="community"><em>Community</em></a>
+    <a href="market.html" id="market"><em>Market</em></a>
+    <a href="robots.html" id="robots"><em>Robots</em></a>
+    <a href="recipes.html" id="recipes"><em>Recipes</em></a>
+</nav>
+<main>
+    <!--test-data-->
+    <div id="marketplace">
+        <h1 id="NYI">NOT YET IMPLEMENTED</h1>
+        <h2>Marketplace</h2>
+        <p>Buy / sell growables peer-to-peer with other iFarm community members.</p>
+        <h3>Buy Growables</h3>
+            <div class="marketBuySell">
+                <form action="#">
+                    <label for="buy-growable"></label>
+                    <input type="text" id="buy-growable" name="growable" placeholder="Growable you want to buy..."><br>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="0" max="100" value="0"><br>
+                    <label for="maxPrice">Max Price:</label>
+                    <input type="number" id="maxPrice" name="maxPrice" min="0" max="1000" value="0"><br>
+                    <label for="radius">Radius:</label>
+                    <input type="number" id="radius" name="radius" min="0" max="100" value="0">KM<br>
+                    <input type="submit" value="Search">
+                </form>
+                    
+            </div>
+        <h3>Sell Growables</h3>
+        <div class="marketBuySell">
+            <form action="#">
+                <label for="sell-growable"></label>
+                <input type="text" id="sell-growable" name="growable" placeholder="Growable you want to sell..."><br>
+                <label for="price">Price per unit:</label>
+                <input type="number" id="price" name="quantity" min="0" max="100" value="0"><br>
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <aside>
+        <h2>Results</h2>
+        <p>These are the results of the filters you've applied</p>
+        <div id="map">
+
+        </div>
+    </aside>
+</main>
+</body>
+</html>

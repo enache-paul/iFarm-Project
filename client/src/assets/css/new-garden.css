@@ -1,0 +1,181 @@
+@keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+aside {
+  animation: slideInFromSide 1.5s;
+}
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+em {
+  visibility: hidden;
+}
+
+main {
+  padding-left: 10.75rem;
+  padding-right: 1rem;
+}
+main > div {
+  animation: slideInFromBottom 0.5s;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  background-color: #6bc247;
+  position: fixed;
+  height: 100%;
+  width: 8%;
+  border-radius: 50px 0 0 50px;
+}
+nav a:hover {
+  animation: pulse 1s infinite;
+}
+
+#account {
+  background-image: url("../images/account.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#account:hover {
+  background-image: url("../images/account-hover.png");
+}
+
+#garden {
+  background-image: url("../images/garden.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#garden:hover {
+  background-image: url("../images/garden-hover.png");
+}
+
+#community {
+  background-image: url("../images/community.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#community:hover {
+  background-image: url("../images/community-hover.png");
+}
+
+#market {
+  background-image: url("../images/marketplace.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#market:hover {
+  background-image: url("../images/marketplace-hover.png");
+}
+
+#robots {
+  background-image: url("../images/robot.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#robots:hover {
+  background-image: url("../images/robot-hover.png");
+}
+
+#recipes {
+  background-image: url("../images/recipe.png");
+  background-repeat: no-repeat;
+  height: 3rem;
+  background-position: center;
+  background-size: 3rem;
+  transition-duration: 300ms;
+}
+#recipes:hover {
+  background-image: url("../images/recipe-hover.png");
+}
+
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form input[type=text] {
+  border: #6bc247 2px solid;
+  padding: 1rem;
+  color: black;
+  font-size: 1.25rem;
+  border-radius: 40px;
+}
+form input[type=submit] {
+  border: none;
+  box-sizing: content-box;
+  padding: 1rem;
+  border-radius: 40px;
+  font-size: 1.25rem;
+  background-color: #6bc247;
+  color: white;
+  font-weight: bold;
+  transition-duration: 300ms;
+}
+form input[type=submit]:hover {
+  background-color: white;
+  color: #6bc247;
+  cursor: pointer;
+}
+
+h2 {
+  width: 40rem;
+  text-align: left;
+}
+
+/*# sourceMappingURL=new-garden.css.map */

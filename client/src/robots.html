@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 23: iFarm</title>
+    <link rel="shortcut icon" href="assets/images/Logo_V.png" type="image/x-icon">
+    <script src="assets/js/pages/robots/robots.js"></script>
+    <script src="assets/js/api/api-calls.js"></script>
+    <script src="../../../../../Users/froot/Desktop/were-they-hacking-csgo/src/assets/js/api/api-communication-abstractor.js"></script>
+    <script src="assets/js/pages/robots/owned-robots.js"></script>
+    <script src="assets/js/pages/robots/event-handler.js"></script>
+    <script src="assets/js/pages/robots/add-robot.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/robots/checkTier.js"></script>
+    <script src="assets/js/pages/garden/ui.js"></script>
+    <script src="assets/js/pages/garden/add-vegetable.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/robots.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" id="account"><em>Account</em></a>
+        <a href="garden.html" id="garden"><em>Garden</em></a>
+        <a href="community.html" id="community"><em>Community</em></a>
+        <a href="market.html" id="market"><em>Market</em></a>
+        <a href="robots.html" id="robots"><em>Robots</em></a>
+        <a href="recipes.html" id="recipes"><em>Recipes</em></a>
+    </nav>
+    <main>
+        <div>
+            <h1>Your Robots</h1>
+            <p>Here you can see an overview of your robots.</p>
+            <div id="robots-stats">
+                <ul>
+                    <li id="workload"><span>68</span> % <br>Current workload</li>
+                    <li id="robot"><span></span> <br>Robots</li>
+                </ul>
+            </div>
+            <h3>Map</h3>
+            <p>Last scan: Yesterday 13:35:53</p>
+            <div id="scan">
+                <div id="scan-of-garden">
+                    <img src="assets/images/garden-scan.png" alt="garden-scan" title="Garden scan">
+                </div>
+                <div id="robots-in-garden">
+                    <ul>
+                        <li class="add-robot">Add Robot</li>  
+                        <li class="add-robot">Add Robot</li>
+                        <li class="add-robot">Add Robot</li>
+                        <li class="add-robot">Add Robot</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <aside id="statistics" aria-label="" class="hidden">
+            <h2>Statistics</h2>
+            <p>View the statistics of your robots</p>
+            <div>
+                <h4 class="robot-name">Robot</h4>
+                <div id="chart-placeholder">
+                    <h4>Robot POV</h4>
+                    <div>
+                        <img src="assets/images/robot-pov.gif" alt="Robot-working">
+                    </div>
+                    <ul>
+                        <li>Current power:&nbsp;&ensp;&emsp;&emsp;<span class="robot-battery"></span> %</li>
+                        <li>Operating Sols:&ensp;&emsp;&emsp;<span>45</span> Sols</li>
+                        <li>Robot assignment:&emsp;<span class="robot-description"></span></li>
+
+                    </ul>
+                </div>
+                <div id="warnings">
+                    <h5>Warnings</h5>
+                    <ul>
+                        <li class="warning1"><span class="robot-name"></span> has lost connection</li>
+                        <li class="warning2"><span class="robot-name"></span> needs maintenance in 2 days!</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <aside id="add-robot" aria-label="" class="">
+            <h2>Add Robot</h2>
+            <p>Scan the code with your robot.</p>
+            <div>
+                <div id="qr">
+                    <img src="assets/images/qr-code.png" alt="qr" title="qr">
+                </div>
+
+                <div id="robot-setup">
+                    <h5>Robot Configuration</h5>
+                    <ul>
+                        <li class="model">Model: FR265</li>
+                        <li class="version">Version: 6.7.2</li>
+                    </ul>
+
+                    <form id="create-robot">
+                        <label for="robot-name">Give your robot a name: </label><br>
+                        <input required type="text" placeholder="enter the name" id="robot-name"> <br>
+
+                        <label for="robot-description">What do you want your robot to do?</label><br>
+                        <input required type="text" placeholder="describe in a few words" id="robot-description"><br>
+
+                        <input type="submit" value="setup">
+                    </form>
+
+                </div>
+            </div>
+        </aside>
+    </main>
+    </body>
+    </html>
+    

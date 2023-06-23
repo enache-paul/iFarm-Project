@@ -1,0 +1,181 @@
+@import "general.scss";
+
+@mixin gray_recipes_container{
+  background-color: $GRAY_DIV_COLOR;
+  margin-right: $ONE_REM;
+  border-radius: $GENERAL_BORDER_RADIUS;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+aside{
+  padding: $ONE_REM;
+  width: 50%;
+  @include gray_recipes_container;
+  div{
+    &:last-of-type{
+      margin-left: $ONE_REM;
+      margin-top: $TWO_REM;
+      background-color: $WHITE;
+      border-radius: $GENERAL_BORDER_RADIUS;
+      padding: 2rem;
+      li{
+        margin: $ONE_REM;
+        font-size: 1.5rem;
+      }
+      a{
+        padding: 0.25rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: $BLACK;
+        color: $WHITE;
+        border-radius: $GENERAL_BORDER_RADIUS;
+      }
+    }
+  }
+}
+
+div{
+  #meal-categories{
+    max-height: 100%;
+  }
+}
+
+h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+h3{
+  font-size: $TWO_REM;
+  font-weight: bold;
+
+}
+
+h4{
+  font-size: $TWO_REM;
+  margin-bottom: $ONE_REM;
+  font-weight: bold;
+}
+
+input{
+  &[type=text]{
+    padding: 0.75rem;
+    width: 50% ;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    margin-bottom: 1.75rem;
+  }
+  &[type=submit]{
+    padding: 0.75rem;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    background-color: lightgray;
+    &:hover{
+      background-color: $GENERAL_GREEN;
+      color: $WHITE;
+    }
+  }
+}
+
+main{
+  display: $FLEX;
+  &>div{
+    padding: $ONE_REM;
+    width: 50%;
+    @include gray_recipes_container;
+  }
+  p{
+    &:first-of-type{
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+p{
+  font-size: 1.2rem;
+  margin-bottom: $ONE_REM;
+  &:nth-of-type(2){
+    margin-bottom: 3rem;
+  }
+}
+
+ul {
+  &#meals{
+    padding: 0.15rem;
+  }
+  li {
+    a {
+      color: #353535;
+      text-decoration: none;
+      padding: $ONE_REM;
+    }
+  }
+}
+
+#category-recipes{
+  padding: $ONE_REM;
+  background-color: $WHITE;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  width: 97%;
+  height: 30rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  li{
+    padding: $ONE_REM;
+    margin: 0.5rem;
+    background-color: white;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    font-size: 1.5rem;
+  }
+}
+
+#meal-categories{
+  width: $ONE_HUNDRED_PERCENT;
+  height: 50%;
+  ul{
+    display: $FLEX;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  li{
+    background-color: $WHITE;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    font-size: 1.5rem;display: inline-block;
+    margin: 0.5rem 0.5rem 1.5rem;
+    width: 6rem;
+    padding: $TWO_REM 5rem 6rem $ONE_REM;
+    font-weight: bold;
+    transition-duration: 300ms;
+    &:hover{
+      cursor: pointer;
+      background-color: #353535;
+      color: $WHITE;
+    }
+  }
+}
+
+#meals{
+  li{
+    font-size: 1.25rem;
+    padding: $ONE_REM;
+    border-radius: $GENERAL_BORDER_RADIUS;
+    background-color: $GRAY_DIV_COLOR;
+    margin: $ONE_REM 0 $ONE_REM 0;
+    &:hover{
+      cursor: pointer;
+    }
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
+.selected{
+  @include selected_style;
+}

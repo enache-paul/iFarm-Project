@@ -1,0 +1,180 @@
+@import "general.scss";
+
+$TWO_REM_PADDING: 2rem;
+$FONT_SIZE_NOT_HEADING: 1.25rem;
+$PLUS_ICON: url("../images/plus.png");
+
+aside{
+  background-color: $GRAY_DIV_COLOR;
+  padding: $TWO_REM_PADDING;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  width: 38%;
+  margin-top: $ONE_REM;
+  div div{
+    display: $FLEX;
+  }
+  p{
+    font-size: $FONT_SIZE_NOT_HEADING;
+  }
+  p em{
+    visibility: visible;
+  }
+}
+
+
+div{
+  background-color: $WHITE;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  #personal{
+    span{
+      font-style: italic;
+      font-weight: bold;
+      color: $GENERAL_GREEN;
+      display: $FLEX;
+      margin-bottom: $TWO_REM;
+    }
+  }
+}
+
+h1, h4{
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+
+h3{
+  font-size: $TWO_REM;
+  margin-bottom: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+main{
+  display: $FLEX;
+  justify-content: space-between;
+  p{
+    margin-bottom: $ONE_REM;
+    font-size: $FONT_SIZE_NOT_HEADING;
+  }
+  aside{
+    div{
+      ul{
+        padding: $TWO_REM_PADDING;
+        margin-top: 0;
+        flex-direction: column;
+        font-size: 1.5rem;
+        font-weight: bold;
+        li{
+          background-image: $PLUS_ICON;
+          background-size: $TWO_REM;
+          background-repeat: $BACKGROUND_NO_REPEAT;
+          background-position: center left;
+          padding-left: 3.5rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+  >div{
+    margin-top: $ONE_REM;
+    background-color: $GRAY_DIV_COLOR;
+    padding: $TWO_REM_PADDING;
+    width: 54%;
+    height: $ONE_HUNDRED_PERCENT;
+  }
+  div{
+    ul{
+      display: $FLEX;
+      justify-content: space-between;
+      padding-bottom: 4rem;
+      margin-top: 5rem;
+    }
+  }
+}
+
+span{
+  font-weight: bold;
+}
+
+.container-robots-link{
+  @include button_style;
+  a{
+    text-decoration: none;
+    color: $WHITE;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+#PREMIUMXL{
+  background-color: $WHITE;
+  width: 11rem;
+  padding: 4rem $ONE_REM;
+  text-decoration: none;
+  color: black;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  font-size: $FONT_SIZE_NOT_HEADING;
+  &:hover{
+    background-color: rgba(120,120,120,1);
+  }
+}
+
+#FREE{
+  width: 11rem;
+  padding: 4rem 3.4rem;
+  text-decoration: none;
+  color: black;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  font-size: $FONT_SIZE_NOT_HEADING;
+  background-color: $WHITE;
+  &:hover{
+    background-color: rgba(120,120,120,1);
+  }
+}
+
+#PREMIUM{
+  background-color: $WHITE;
+  width: 11rem;
+  text-decoration: none;
+  color: black;
+  border-radius: $GENERAL_BORDER_RADIUS;
+  font-size: $FONT_SIZE_NOT_HEADING;
+  padding: 4rem 2.36rem;
+  &:hover{
+    background-color: rgba(120,120,120,1);
+  }
+}
+
+#personal{
+  height: 23rem;
+  padding: $ONE_REM;
+  h2{
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+}
+
+.price{
+  background-image: none;
+  font-size: 3rem;
+  font-weight: bold;
+  span{
+    font-weight: normal;
+    font-size: 1.75rem;
+  }
+}
+
+.subscription {
+  em {
+    visibility: visible;
+    font-weight: bold;
+  }
+}
+
+.tiers .selected {
+  border: red solid 0.2rem;
+}
